@@ -19,7 +19,8 @@ SRCS = $(SRC_DIR)/main.c \
        $(BASE_DIR)/oci_base_string.c \
        $(BASE_DIR)/oci_base_test.c
 
-TEST_SRCS = $(wildcard $(TEST_DIR)/*.c)
+TEST_SRCS = $(TEST_DIR)/test_main.c \
+            $(filter-out $(TEST_DIR)/test_main.c, $(wildcard $(TEST_DIR)/*.c))
 TEST_BASE_SRCS = $(BASE_DIR)/oci_base_memory.c \
                  $(BASE_DIR)/oci_base_string.c \
                  $(BASE_DIR)/oci_base_test.c
@@ -57,6 +58,7 @@ $(OBJ_DIR)/tests/%.o: $(TEST_DIR)/%.c
 # Clean target for removing compiled files
 clean:
 	rm -rf $(BUILD_DIR)
+	rm -f compile_commands.json
 
 # Test target
 test: $(TEST_TARGET)
