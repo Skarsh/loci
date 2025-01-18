@@ -42,6 +42,9 @@
 *.idb
 *.pdb
 
+# Build directory
+build/
+
 # Debugger files
 *.rdbg
 
