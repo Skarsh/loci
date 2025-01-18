@@ -28,8 +28,8 @@ int main() {
     printf("Something->width: %d\n", something->width);
     printf("Something->height: %d\n", something->height);
 
-    char *my_char_ptr = "lellele";
-    String8 str = str8((u8*)my_char_ptr, strlen(my_char_ptr));
+    String8 str = str8_lit("lellele");
+    printf("%s\n", str.str);
 
     arena_free_all(&arena);
 

@@ -10,6 +10,8 @@ struct String8 {
 };
 
 String8 str8(u8 *str, u64 size);
+#define str8_lit(s) str8((u8 *)(s), sizeof(s) - 1)
+
 
 // Character classification and conversion functions
 bool char_is_space(const u8 c);

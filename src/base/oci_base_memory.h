@@ -13,8 +13,6 @@ struct oci_Arena {
 
 void arena_init(oci_Arena *arena, void *backing_buffer, usize backing_buffer_length);
 
-void arena_free(oci_Arena *arena, void *ptr);
-
 void arena_free_all(oci_Arena *arena);
 
 void *arena_alloc(oci_Arena *arena, usize size);

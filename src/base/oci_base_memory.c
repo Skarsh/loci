@@ -83,10 +83,6 @@ void arena_init(oci_Arena *arena, void *backing_buffer, usize backing_buffer_len
     arena->prev_offset = 0;
 }
 
-void arena_free(oci_Arena *arena, void *ptr) {
-    // Do nothing
-}
-
 void arena_free_all(oci_Arena *arena) {
     arena->curr_offset = 0;
     arena->prev_offset = 0;

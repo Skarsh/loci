@@ -88,7 +88,7 @@
 #define memory_zero_struct(ptr) memory_zero((ptr), sizeof(*ptr)))
 #define memory_zero_array(arr) memory_zero((arr), sizeof(arr))
 
-#define oci_array_count(a) (sizeof(a) / sizeof(a)[0])
+#define array_count(a) (sizeof(a) / sizeof(a)[0])
 
 // -------- Types -------- //
 #define internal static
