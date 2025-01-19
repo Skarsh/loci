@@ -1,4 +1,3 @@
-#include "base/oci_base_test.h"
 
 typedef struct {
     i32 x;

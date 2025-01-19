@@ -1,8 +1,6 @@
 #ifndef OCI_BASE_MEMORY_H
 #define OCI_BASE_MEMORY_H
 
-#include "oci_base_core.h"
-
 typedef struct oci_Arena oci_Arena;
 struct oci_Arena {
     u8 *buf;

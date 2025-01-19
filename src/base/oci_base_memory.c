@@ -1,5 +1,3 @@
-#include "oci_base_memory.h"
-
 #ifndef DEFAULT_ALIGNMENT
 #define DEFAULT_ALIGNMENT (2*sizeof(void *))
 #endif

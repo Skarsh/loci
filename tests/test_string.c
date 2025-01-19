@@ -1,5 +1,3 @@
-#include "base/oci_base_test.h"
-#include "base/oci_base_string.h"
 
 void test_string_operations() {
     TEST_INIT("String Operations");

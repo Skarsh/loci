@@ -1,8 +1,6 @@
 #ifndef OCI_BASE_STRING_H
 #define OCI_BASE_STRING_H
 
-#include "oci_base_core.h"
-
 typedef struct String8 String8;
 struct String8 {
     u8 *str;

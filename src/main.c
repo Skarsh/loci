@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "base/oci_base_core.h"
-#include "base/oci_base_memory.h"
-#include "base/oci_base_string.h"
+#include "base/oci_base_inc.h"
+#include "base/oci_base_inc.c"
 
 typedef struct {
     i32 width;

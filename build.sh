@@ -26,19 +26,17 @@ fi
 
 # --- Build Everything ------------------------------------------------------
 cd build
+
 if [ -v test ]
 then
-    $compile ../tests/test_main.c ../tests/test_string.c ../tests/test_structs.c ../tests/test_macros.c \
-            ../src/base/oci_base_memory.c ../src/base/oci_base_string.c ../src/base/oci_base_test.c \
-            $compile_link -o test_runner && ./test_runner
+    $compile ../tests/test_main.c $compile_link -o test_runner && ./test_runner
 fi
 
 if [ -v main ]
 then
-    $compile ../src/main.c ../src/base/oci_base_memory.c \
-            ../src/base/oci_base_string.c ../src/base/oci_base_test.c \
-            $compile_link -o oci
+    $compile ../src/main.c $compile_link -o oci && ./oci
 fi
+
 
 # --- Warn On No Builds -----------------------------------------------------
 if [ ! -v test ] && [ ! -v main ]

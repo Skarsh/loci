@@ -1,8 +1,7 @@
 #ifndef OCI_BASE_TEST_H
 #define OCI_BASE_TEST_H
 
-#include "oci_base_core.h"
-#include "oci_base_string.h"
+// TODO(Thomas): Should be able to remove these too
 
 typedef struct {
     String8 name;

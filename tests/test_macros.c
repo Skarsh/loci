@@ -1,4 +1,3 @@
-#include "base/oci_base_test.h"
 
 void test_macros() {
     TEST_INIT("Test macros");
