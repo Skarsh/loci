@@ -15,7 +15,7 @@ void test_register(String8 name, Test_Func func) {
     test_list = entry; 
 }
 
-void test_run_all(void) {
+void test_run_all() {
     u32 total_tests = 0;
     Test_Entry *current = test_list;
 
@@ -83,7 +83,7 @@ void test_assert_equal_str(Test_Context *ctx, String8 expected, String8 actual, 
     }
 }
 
-void test_assert_equal_mem(Test_Context* ctx, const void* a, const void* b, 
+void test_assert_equal_mem(Test_Context *ctx, const void *a, const void *b, 
                           usize size, const String8 type_name, const String8 message,
                           b32 expect_equal) {
     b32 are_equal = (memcmp(a, b, size) == 0);
@@ -99,35 +99,11 @@ void test_assert_equal_mem(Test_Context* ctx, const void* a, const void* b,
         } else {
             printf("         Values should be different but are equal\n");
         }
-        
-        // Print hex dump of both structs for debugging
-        printf("         First value (%.*s):\n         ", 
-               (int)type_name.size, (char*)type_name.str);
-        const u8* bytes_a = (const u8*)a;
-        const u8* bytes_b = (const u8*)b;
-        for (usize i = 0; i < size; i++) {
-            printf("%02x ", bytes_a[i]);
-            if ((i + 1) % 16 == 0 && i < size - 1) printf("\n         ");
-        }
-        printf("\n         Second value (%.*s):\n         ",
-               (int)type_name.size, (char*)type_name.str);
-        for (usize i = 0; i < size; i++) {
-            printf("%02x ", bytes_b[i]);
-            if ((i + 1) % 16 == 0 && i < size - 1) printf("\n         ");
-        }
-        printf("\n");
-        
-        // Mark differing bytes
-        printf("         Differences:\n         ");
-        for (usize i = 0; i < size; i++) {
-            printf("%c  ", (bytes_a[i] != bytes_b[i]) ? 'X' : '.');
-            if ((i + 1) % 16 == 0 && i < size - 1) printf("\n         ");
-        }
-        printf("\n");
     } else {
-        printf("  [PASS]");
+        printf("  [PASS]\n");
     }
 }
+
 void test_end(Test_Context *ctx) {
     printf("\n=== Test Suite: %s Complete ===\n", ctx->name.str);
     printf("Tests run: %u\n", ctx->tests_run);

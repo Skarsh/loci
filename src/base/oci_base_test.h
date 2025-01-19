@@ -24,20 +24,20 @@ struct Test_Entry {
 
 void test_register(String8 name, Test_Func func);
 
-void test_run_all(void);
+void test_run_all();
 
-void test_init(Test_Context* ctx, String8 name);
+void test_init(Test_Context *ctx, String8 name);
 
-void test_begin(Test_Context* ctx, String8 test_name);
+void test_begin(Test_Context *ctx, String8 test_name);
 
-void test_assert(Test_Context* ctx, b32 condition, String8 message);
-void test_assert_equal_int(Test_Context* ctx, i32 expected, i32 actual, String8 message);
-void test_assert_equal_str(Test_Context* ctx, String8 expected, String8 actual, String8 message);
-void test_assert_equal_mem(Test_Context* ctx, const void* a, const void* b, 
+void test_assert(Test_Context *ctx, b32 condition, String8 message);
+void test_assert_equal_int(Test_Context *ctx, i32 expected, i32 actual, String8 message);
+void test_assert_equal_str(Test_Context *ctx, String8 expected, String8 actual, String8 message);
+void test_assert_equal_mem(Test_Context *ctx, const void *a, const void *b, 
                           usize size, const String8 type_name, const String8 message, 
                           b32 expect_equal);
 
-void test_end(Test_Context* ctx);
+void test_end(Test_Context *ctx);
 
 #define TEST_INIT(name_str) \
     Test_Context ctx = {0}; \
