@@ -1,7 +1,7 @@
 #include "base/oci_base_test.h"
 #include "base/oci_base_string.h"
 
-void test_string_operations(void) {
+void test_string_operations() {
     TEST_INIT("String Operations");
 
     // Test string length
@@ -9,7 +9,7 @@ void test_string_operations(void) {
 
     String8 str = str8_lit("hello");
     
-    TEST_ASSERT_INT(5, str.size, "String length should be 5");
+    TEST_ASSERT_I32(5, str.size, "String length should be 5");
 
     // Test string comparison
     TEST_BEGIN("string comparison");

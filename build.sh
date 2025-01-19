@@ -28,7 +28,7 @@ fi
 cd build
 if [ -v test ]
 then
-    $compile ../tests/test_main.c ../tests/test_string.c ../tests/test_structs.c \
+    $compile ../tests/test_main.c ../tests/test_string.c ../tests/test_structs.c ../tests/test_macros.c \
             ../src/base/oci_base_memory.c ../src/base/oci_base_string.c ../src/base/oci_base_test.c \
             $compile_link -o test_runner && ./test_runner
 fi

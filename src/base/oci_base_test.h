@@ -31,7 +31,12 @@ void test_init(Test_Context *ctx, String8 name);
 void test_begin(Test_Context *ctx, String8 test_name);
 
 void test_assert(Test_Context *ctx, b32 condition, String8 message);
-void test_assert_equal_int(Test_Context *ctx, i32 expected, i32 actual, String8 message);
+
+void test_assert_equal_i32(Test_Context *ctx, i32 expected, i32 actual, String8 message);
+void test_assert_equal_i64(Test_Context *ctx, i64 expected, i64 actual, String8 message);
+void test_assert_equal_u32(Test_Context *ctx, u32 expected, u32 actual, String8 message);
+void test_assert_equal_u64(Test_Context *ctx, u64 expected, u64 actual, String8 message);
+
 void test_assert_equal_str(Test_Context *ctx, String8 expected, String8 actual, String8 message);
 void test_assert_equal_mem(Test_Context *ctx, const void *a, const void *b, 
                           usize size, const String8 type_name, const String8 message, 
@@ -45,8 +50,19 @@ void test_end(Test_Context *ctx);
 
 #define TEST_BEGIN(name_str) test_begin(&ctx, str8_lit(name_str))
 #define TEST_ASSERT(condition, message_str) test_assert(&ctx, condition, str8_lit(message_str))
-#define TEST_ASSERT_INT(expected, actual, message_str) \
-    test_assert_equal_int(&ctx, expected, actual, str8_lit(message_str))
+
+#define TEST_ASSERT_I32(expected, actual, message_str) \
+    test_assert_equal_i32(&ctx, expected, actual, str8_lit(message_str))
+
+#define TEST_ASSERT_I64(expected, actual, message_str) \
+    test_assert_equal_i64(&ctx, expected, actual, str8_lit(message_str))
+
+#define TEST_ASSERT_U32(expected, actual, message_str) \
+    test_assert_equal_u32(&ctx, expected, actual, str8_lit(message_str))
+
+#define TEST_ASSERT_U64(expected, actual, message_str) \
+    test_assert_equal_u64(&ctx, expected, actual, str8_lit(message_str))
+
 #define TEST_ASSERT_STR(expected, actual, message_str) \
     test_assert_equal_str(&ctx, expected, actual, str8_lit(message_str))
 

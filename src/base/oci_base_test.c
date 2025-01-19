@@ -61,7 +61,7 @@ void test_assert(Test_Context *ctx, b32 condition, String8 message) {
     }
 }
 
-void test_assert_equal_int(Test_Context *ctx, i32 expected, i32 actual, String8 message) {
+void test_assert_equal_i32(Test_Context *ctx, i32 expected, i32 actual, String8 message) {
     if (expected != actual) {
         ctx->tests_failed++;
         printf("    [FAIL] %s: %s\n", ctx->current_test.str, message.str);
@@ -71,6 +71,40 @@ void test_assert_equal_int(Test_Context *ctx, i32 expected, i32 actual, String8 
         printf("    [PASS]\n");
     }
 }
+
+void test_assert_equal_i64(Test_Context *ctx, i64 expected, i64 actual, String8 message) {
+    if (expected != actual) {
+        ctx->tests_failed++;
+        printf("    [FAIL] %s: %s\n", ctx->current_test.str, message.str);
+        printf("        Expected: %ld\n", expected);
+        printf("        Got: %ld\n", actual);
+    } else {
+        printf("    [PASS]\n");
+    }
+}
+
+void test_assert_equal_u32(Test_Context *ctx, u32 expected, u32 actual, String8 message) {
+    if (expected != actual) {
+        ctx->tests_failed++;
+        printf("    [FAIL] %s: %s\n", ctx->current_test.str, message.str);
+        printf("        Expected: %d\n", expected);
+        printf("        Got: %d\n", actual);
+    } else {
+        printf("    [PASS]\n");
+    }
+}
+
+void test_assert_equal_u64(Test_Context *ctx, u64 expected, u64 actual, String8 message) {
+    if (expected != actual) {
+        ctx->tests_failed++;
+        printf("    [FAIL] %s: %s\n", ctx->current_test.str, message.str);
+        printf("        Expected: %ld\n", expected);
+        printf("        Got: %ld\n", actual);
+    } else {
+        printf("    [PASS]\n");
+    }
+}
+
 
 // TODO(Thomas): Write own strcmp for String8
 void test_assert_equal_str(Test_Context *ctx, String8 expected, String8 actual, String8 message) {
