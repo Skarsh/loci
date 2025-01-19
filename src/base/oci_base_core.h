@@ -98,6 +98,13 @@
 
 #define array_count(a) (sizeof(a) / sizeof(a)[0])
 
+#if COMPILER_CL || (COMPILER_CLANG && OS_WINDOWS)
+#pragma section(".rdata$", read)
+#define read_only __declspec(allocate(".rdata$"))
+#else
+#define read_only
+#endif
+
 // -------- Types -------- //
 #define internal static
 #define local_persist static
